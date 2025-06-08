@@ -1,5 +1,5 @@
 /*
- * CryptoProtos Plugin for Obsidian v1.0
+ * CryptoProtos Plugin v1.0
  * Author: Asbjorn Rasen
  * Contact: asbjornrasen@gmail.com
  * Web: https://www.cryptoprotos.tech
