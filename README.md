@@ -1,6 +1,6 @@
-CryptoProtos Plugin for Obsidian
+CryptoProtos Plugin
 
-This plugin allows you to encrypt and decrypt entire Markdown files in your Obsidian vault using a password.
+This plugin allows you to encrypt and decrypt entire Markdown files in your vault using a password.
 It uses AES-256-GCM encryption with a unique salt and IV for each operation.
 The plugin prompts for a password every time — it is never stored.
 Features
@@ -9,7 +9,7 @@ Features
 
     🔓 Decrypt the current TXT file with a password
 
-    ✏️ Fully integrates with the Obsidian editor
+    ✏️ Fully integrates with editor
 
     🔄 Compatible with external tools (e.g., Python, JavaScript) if the encryption format is respected
 
