@@ -1,7 +1,8 @@
 /*
  * CryptoProtos Plugin for Obsidian v1.0
- * Author: Asbjorn Rasen (Асбйорн Расен)
+ * Author: Asbjorn Rasen
  * Contact: asbjornrasen@gmail.com
+ * Web: https://www.cryptoprotos.tech
  * Date: May 29, 2025
  * License: Custom License – “NoDerivs Free Use”
  * Copyright © 2025 Asbjorn Rasen. All rights reserved.
@@ -10,10 +11,10 @@
  * This software is free to use, without limitation, for personal or commercial purposes.
  * However, you are NOT allowed to modify, adapt, reverse-engineer, decompile, translate,
  * or create derivative works based on this code or any part of it.
- * 
+ *
  * Redistribution of the full, unmodified plugin is permitted with clear attribution
  * to the original author.
- * 
+ *
  * You may NOT extract or reuse any portion of the code in other software or applications
  * without explicit written permission from the author.
  *
@@ -23,4 +24,3 @@
  * or forgotten passwords resulting from the use or misuse of this plugin.
  *
  */
-
