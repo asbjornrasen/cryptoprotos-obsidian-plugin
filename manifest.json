@@ -5,6 +5,7 @@
   "minAppVersion": "1.0.0",
   "description": "Encrypt and decrypt entire Obsidian files with password‑based AES encryption. Learn more at www.cryptoprotos.tech.",
   "author": "Asbjorn Rasen",
+  "authorUrl": "https://www.cryptoprotos.tech",
   "main": "main.js",
   "isDesktopOnly": false
 }
