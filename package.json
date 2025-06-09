@@ -1,0 +1,20 @@
+{
+  "name": "cryptoprotos",
+  "version": "1.0.0",
+  "description": "CryptoProtos plugin for encrypting and decrypting notes using AES encryption with a password.",
+  "main": "main.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": {
+    "name": "Asbjorn Rasen",
+    "email": "asbjornrasen@gmail.com"
+  },
+  "license": "SEE LICENSE IN license.md",
+  "devDependencies": {
+    "@types/node": "^22.15.24",
+    "obsidian": "^1.8.7",
+    "typescript": "^5.8.3"
+  }
+}
+
