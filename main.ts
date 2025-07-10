@@ -106,7 +106,7 @@ class PasswordModal extends Modal {
 		const { contentEl } = this;
 		contentEl.createEl("h3", { text: this.promptMsg });
 		const input = contentEl.createEl("input", { type: "password" });
-		input.style.width = "100%";
+		input.classList.add("cryptoprotos-input");
 		input.addEventListener("keydown", e => {
 			if (e.key === "Enter") {
 				const buf = new Uint8Array(input.value.length);
@@ -120,7 +120,6 @@ class PasswordModal extends Modal {
 	}
 	onClose() { this.contentEl.empty(); }
 }
-
 
 class ConfirmPasswordModal extends Modal {
 	private resolve!: (v: Uint8Array | null) => void;
@@ -139,14 +138,13 @@ class ConfirmPasswordModal extends Modal {
 		contentEl.createEl("h3", { text: this.promptMsg });
 
 		const input1 = contentEl.createEl("input", { type: "password", placeholder: "Enter password" });
-		input1.style.width = "100%";
+		input1.classList.add("cryptoprotos-input");
 
 		const input2 = contentEl.createEl("input", { type: "password", placeholder: "Confirm password" });
-		input2.style.width = "100%";
-		input2.style.marginTop = "10px";
+		input2.classList.add("cryptoprotos-input", "cryptoprotos-margin-top");
 
 		const confirmBtn = contentEl.createEl("button", { text: "Confirm" });
-		confirmBtn.style.marginTop = "10px";
+		confirmBtn.classList.add("cryptoprotos-margin-top");
 
 		confirmBtn.onclick = () => {
 			if (input1.value !== input2.value) {
@@ -167,14 +165,20 @@ class ConfirmPasswordModal extends Modal {
 	}
 }
 
-
-
 export default class CryptoProtosPlugin extends Plugin {
 	settings: CryptoProtosSettings = DEFAULT_SETTINGS;
 
 	async onload() {
 		console.log("✅ CryptoProtos loaded");
 		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+
+		const style = document.createElement("style");
+		style.id = "cryptoprotos-style";
+		style.textContent = `
+			.cryptoprotos-input { width: 100%; }
+			.cryptoprotos-margin-top { margin-top: 10px; }
+		`;
+		document.head.appendChild(style);
 
 		this.addCommand({
 			id: "encrypt-current-file",
@@ -216,6 +220,8 @@ export default class CryptoProtosPlugin extends Plugin {
 
 	onunload() {
 		console.log("🧹 CryptoProtos unloaded");
+		const style = document.getElementById("cryptoprotos-style");
+		if (style) style.remove();
 	}
 
 	public getActiveFile(): TFile | null {
@@ -229,7 +235,6 @@ export default class CryptoProtosPlugin extends Plugin {
 		else
 			return new PasswordModal(this.app, "Enter password").getPasswordBytes();
 	}
-
 
 	async encryptFile(file: TFile) {
 		const passBytes = await this.promptPassword(true);

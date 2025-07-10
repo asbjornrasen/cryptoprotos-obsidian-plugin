@@ -1,4 +1,4 @@
-CryptoProtos Plugin v1.0
+CryptoProtos Plugin v1.0.5
 Author: Asbjorn Rasen
 Contact: asbjornrasen@gmail.com
 Web: https://www.cryptoprotos.tech
