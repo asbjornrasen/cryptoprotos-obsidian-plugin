@@ -8,7 +8,6 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "outDir": "./",               
     "rootDir": "./",
     "sourceMap": false,
     "declaration": false,
