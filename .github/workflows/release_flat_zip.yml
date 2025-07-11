@@ -3,7 +3,8 @@ name: Create Flat Zip for Obsidian Plugin Release
 on:
   push:
     tags:
-      - '[0-9]+.[0-9]+.[0-9]+'    # Поддержка тегов формата 1.0.7, 2.5.3 без префикса v
+      - '[0-9]+.[0-9]+.[0-9]+'
+  workflow_dispatch:
 
 jobs:
   release:
