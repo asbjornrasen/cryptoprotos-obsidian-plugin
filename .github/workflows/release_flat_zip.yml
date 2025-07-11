@@ -1,0 +1,25 @@
+name: Create Flat Zip for Obsidian Plugin Release
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'    # Поддержка тегов формата 1.0.7, 2.5.3 без префикса v
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create flat zip without parent folder
+        run: |
+          zip -r cryptoprotos.zip manifest.json main.js README.md LICENSE *.css *.md *.json
+
+      - name: Upload zip to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: cryptoprotos.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
