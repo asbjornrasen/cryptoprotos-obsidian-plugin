@@ -16,7 +16,7 @@ jobs:
 
       - name: Create flat zip without parent folder
         run: |
-          zip -r cryptoprotos.zip manifest.json main.js README.md LICENSE *.css *.md *.json
+          zip -r cryptoprotos.zip manifest.json main.js README.md license.me *.css *.md *.json
 
       - name: Upload zip to GitHub Release
         uses: softprops/action-gh-release@v2
